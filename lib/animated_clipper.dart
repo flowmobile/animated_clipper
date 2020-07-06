@@ -1,7 +1,8 @@
 library animated_clipper;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/animated_cross_clip.dart';
+export 'src/clip_path_transition.dart';
+export 'src/path_builders/path_builder_clipper.dart';
+export 'src/path_builders/path_builder.dart';
+export 'src/path_builders/slide/slide.dart';
+export 'src/path_builders/split/split.dart';

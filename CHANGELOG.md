@@ -1,3 +1,8 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - 2020-07-05
 
-* TODO: Describe initial release.
+Intitial prototype to define and refine the Models and API interfaces
+
+* Clipper Toggle
+* Animated Path
+   * Slide (Up, Down, Left, Right)
+   * Split (Vertical In / Out, Horizontal In / Out)

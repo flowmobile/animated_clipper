@@ -1,8 +1,8 @@
 name: animated_clipper
-description: A new Flutter package project.
+description: Animated Paths, Clipper and Widget Switcher
 version: 0.0.1
-author:
-homepage:
+author: David King <david@oodavid.com>
+homepage: https://github.com/oodavid/animated_clipper
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

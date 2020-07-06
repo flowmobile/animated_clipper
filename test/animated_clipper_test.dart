@@ -1,3 +1,6 @@
+/*
+TODO: Figure out what / how to test
+
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:animated_clipper/animated_clipper.dart';
@@ -11,3 +14,4 @@ void main() {
     expect(() => calculator.addOne(null), throwsNoSuchMethodError);
   });
 }
+*/
