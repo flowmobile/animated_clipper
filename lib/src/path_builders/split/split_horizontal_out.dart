@@ -1,8 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../path_builder.dart';
 
 class PathBuilderSplitHorizontalOut extends PathBuilder {
+  /// Abstract const constructor to enable subclasses to provide
+  /// const constructors so that they can be used in const expressions.
+  const PathBuilderSplitHorizontalOut();
+
   @override
   Path buildPath(Size size, double value) {
     return Path()

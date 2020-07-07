@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../animated_clipper.dart';
 import 'path_builders/path_builder.dart';
 
-// TODO - Refactor this to look / act more like AnimatedCrossFade
 // TODO - Documentation
-// TODO - Add a default pathBuilder and duration
 
 enum AnimatedCrossClipState {
   showFirst,
@@ -17,19 +15,19 @@ class AnimatedCrossClip extends StatefulWidget {
   final Widget secondChild;
   final Duration duration;
   final PathBuilder pathBuilder;
-  final AnimatedCrossClipState crossClipState;
   final Curve curve;
   final Clip clipBehavior;
+  final AnimatedCrossClipState crossClipState;
 
   const AnimatedCrossClip({
     Key key,
     @required this.firstChild,
     @required this.secondChild,
     @required this.duration,
-    @required this.pathBuilder,
     this.crossClipState = AnimatedCrossClipState.showFirst,
+    this.pathBuilder = PathBuilders.slideUp,
+    this.curve = Curves.linear,
     this.clipBehavior = Clip.antiAlias,
-    this.curve,
   }) : super(key: key);
 
   @override

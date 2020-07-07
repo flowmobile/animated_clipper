@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-// TODO - refactor to use a `typedef` like `AnimatedSwitcherLayoutBuilder`?
-
+@immutable
 abstract class PathBuilder {
+  /// Abstract const constructor to enable subclasses to provide
+  /// const constructors so that they can be used in const expressions.
+  const PathBuilder();
+
   Path call(Size size, double value) {
     if (value == 1) {
       return null; // ClipPath Renders nothing

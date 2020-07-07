@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-import '../animated_clipper.dart';
 import 'path_builders/path_builder.dart';
+import 'path_builders/path_builder_clipper.dart';
+import 'path_builders/path_builders.dart';
 
 // Based on RotationTransition / SizeTransition etc.
-// TODO - add a default `pathBuilder` value (see AnimatedSwitcher for an example)
 
 /// Animates the ClipPath of a widget
 class ClipPathTransition extends AnimatedWidget {
@@ -15,11 +15,10 @@ class ClipPathTransition extends AnimatedWidget {
   const ClipPathTransition({
     Key key,
     @required Animation<double> animation,
-    @required this.pathBuilder,
+    this.pathBuilder = PathBuilders.slideUp,
     this.clipBehavior = Clip.antiAlias,
     this.child,
   })  : assert(animation != null),
-        assert(pathBuilder != null),
         super(key: key, listenable: animation);
 
   /// The animation that controls the ClipPath of the child.
@@ -40,7 +39,6 @@ class ClipPathTransition extends AnimatedWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(clipBehavior);
     return ClipPath(
       child: child,
       clipBehavior: clipBehavior,

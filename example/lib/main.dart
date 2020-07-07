@@ -1,6 +1,9 @@
 import 'package:animated_clipper/animated_clipper.dart';
+import 'package:animated_clipper_example/simple_box.dart';
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
+
+import 'animated_clip_reveal_example.dart';
+import 'animated_cross_clip_example.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,12 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Animated Clipper Example',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Animated Clipper Example'),
     );
   }
 }
@@ -29,10 +33,17 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  bool _bool = false;
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+    });
+  }
+
+  void _toggleBool(bool newValue) {
+    setState(() {
+      _bool = newValue;
     });
   }
 
@@ -42,84 +53,64 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Column(
-        children: <Widget>[
-          Text('hello'),
-          OrangeOrBlack(counter: _counter),
-          AllTheNumbers(counter: _counter),
-        ],
+      body: Center(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.all(12.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                // ClipSwitch
+                Text('ClipSwitch can be tapped'),
+                Text('(you must manage the state, just like Switch)'),
+                SizedBox(height: 12),
+                ClipSwitch(
+                  value: _bool,
+                  onChanged: _toggleBool,
+                  inactiveWidget: SimpleBox(text: 'OFF', color: Colors.black),
+                  activeWidget: SimpleBox(text: 'ON', color: Colors.blue),
+                ),
+                SizedBox(height: 12),
+                // AnimatedCrossClip
+                Text('AnimatedCrossClip toggles between two widgets'),
+                Text('(these use the same state value as above)'),
+                SizedBox(height: 12),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    AnimatedCrossClipExample(
+                      value: _bool,
+                      pathBuilder: PathBuilders.splitHorizontalIn,
+                    ),
+                    SizedBox(width: 12),
+                    AnimatedCrossClipExample(
+                      value: _bool,
+                      pathBuilder: PathBuilders.slideUp,
+                    ),
+                    SizedBox(width: 12),
+                    AnimatedCrossClipExample(
+                      value: _bool,
+                      pathBuilder: PathBuilders.circleOut,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 12),
+                // AnimatedClipReveal
+                Text('AnimatedClipReveal reveals the child as it changes'),
+                Text('You have pushed the button this many times:'),
+                SizedBox(height: 12),
+                AnimatedClipRevealExample(value: _counter),
+                SizedBox(height: 12),
+                FloatingActionButton(
+                  onPressed: _incrementCounter,
+                  tooltip: 'Increment',
+                  child: Icon(Icons.add),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
-    );
-  }
-}
-
-class AllTheNumbers extends StatelessWidget {
-  const AllTheNumbers({
-    Key key,
-    @required int counter,
-  })  : _counter = counter,
-        super(key: key);
-
-  final int _counter;
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedSwitcher(
-      duration: Duration(milliseconds: 300),
-      switchInCurve: Curves.easeInOut,
-      child: Container(
-        key: Key('$_counter'),
-        width: 100,
-        height: 100,
-        color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt())
-            .withOpacity(1.0),
-        child: Text('$_counter', style: Theme.of(context).textTheme.headline4),
-      ),
-      transitionBuilder: (Widget child, Animation<double> animation) {
-        return ClipPathTransition(
-          animation: animation,
-          child: child,
-          pathBuilder: PathBuilderSplitHorizontalOut(),
-        );
-      },
-    );
-  }
-}
-
-class OrangeOrBlack extends StatelessWidget {
-  const OrangeOrBlack({
-    Key key,
-    @required int counter,
-  })  : _counter = counter,
-        super(key: key);
-
-  final int _counter;
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedCrossClip(
-      duration: Duration(milliseconds: 300),
-      pathBuilder: PathBuilderSplitHorizontalIn(),
-      firstChild: Container(
-        width: 100,
-        height: 100,
-        color: Colors.orangeAccent,
-      ),
-      secondChild: Container(
-        width: 100,
-        height: 100,
-        color: Colors.black,
-      ),
-      crossClipState: _counter.isEven
-          ? AnimatedCrossClipState.showFirst
-          : AnimatedCrossClipState.showSecond,
-      curve: Curves.easeInOut,
-      clipBehavior: Clip.hardEdge,
     );
   }
 }
