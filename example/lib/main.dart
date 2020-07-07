@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import 'animated_clip_reveal_example.dart';
 import 'animated_cross_clip_example.dart';
+import 'clip_path_transition_example.dart';
 
 void main() {
   runApp(MyApp());
@@ -60,6 +61,10 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                // ClipPathTransition
+                Text('ClipPathTransition animates the ClipPath'),
+                Text('Use an AnimationController to drive the animation'),
+                ClipPathTransitionExample(),
                 // ClipSwitch
                 Text('ClipSwitch can be tapped'),
                 Text('(you must manage the state, just like Switch)'),

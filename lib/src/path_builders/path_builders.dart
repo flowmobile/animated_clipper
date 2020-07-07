@@ -42,15 +42,15 @@ class PathBuilders {
 
   /// Like the flying to the horizon and touching the sun with your mind
   static const PathBuilder splitHorizontalIn =
-      PathBuilderSplitHorizontal(invert: true);
+      PathBuilderSplitHorizontal(invert: false);
 
   /// Like a the sky and earth swallowing you whole
   static const PathBuilder splitHorizontalOut =
-      PathBuilderSplitHorizontal(invert: false);
+      PathBuilderSplitHorizontal(invert: true);
 
-  /// Like running into a sewage pipe
-  static const PathBuilder circleIn = PathBuilderCircle(invert: true);
+  /// Like running into a sewage pipe... ooh, sewage!
+  static const PathBuilder circleIn = PathBuilderCircle(invert: false);
 
-  /// Like running backwards out of a sewage pipe, what *was* that?
-  static const PathBuilder circleOut = PathBuilderCircle(invert: false);
+  /// Like running backwards out of a sewage pipe... ooh, fresh air!
+  static const PathBuilder circleOut = PathBuilderCircle(invert: true);
 }
