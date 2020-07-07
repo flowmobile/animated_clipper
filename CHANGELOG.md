@@ -1,3 +1,7 @@
+## [0.1.0] - 2020-07-05
+
+Better documentation, example gif
+
 ## [0.0.1] - 2020-07-05
 
 Intitial commit to define the Widgets and interfaces.

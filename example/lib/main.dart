@@ -61,10 +61,6 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                // ClipPathTransition
-                Text('ClipPathTransition animates the ClipPath'),
-                Text('Use an AnimationController to drive the animation'),
-                ClipPathTransitionExample(),
                 // ClipSwitch
                 Text('ClipSwitch can be tapped'),
                 Text('(you must manage the state, just like Switch)'),
@@ -111,6 +107,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   tooltip: 'Increment',
                   child: Icon(Icons.add),
                 ),
+                // ClipPathTransition
+                Text('ClipPathTransition animates the ClipPath'),
+                Text('Use an AnimationController to drive the animation'),
+                ClipPathTransitionExample(),
               ],
             ),
           ),

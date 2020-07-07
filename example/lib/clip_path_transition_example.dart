@@ -103,9 +103,11 @@ class _ClipPathTransitionExampleState extends State<ClipPathTransitionExample>
         ClipPathTransition(
           animation: _controller.drive(CurveTween(curve: Curves.easeInOut)),
           pathBuilder: _pathBuilder,
-          child: SimpleBox(
-            text: 'SECOND',
-            color: Colors.orange.shade200,
+          child: Container(
+            color: Colors.blueGrey.shade100,
+            child: FlutterLogo(
+              size: 200,
+            ),
           ),
           // clipBehavior: Clip.antiAlias,
         ),
