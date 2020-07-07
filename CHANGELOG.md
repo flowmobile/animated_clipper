@@ -1,3 +1,7 @@
+## [0.1.3] - 2020-07-05
+
+Humorous docs for `circleIn`, `circleOut`, `splitHorizontalIn` and `splitHorizontalOut`
+
 ## [0.1.2] - 2020-07-05
 
 Updated `circleIn` and `circleOut`

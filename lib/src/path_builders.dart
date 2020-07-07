@@ -46,17 +46,17 @@ class PathBuilders {
   static const PathBuilder splitVerticalOut =
       PathBuilderSplitVertical(invert: false);
 
-  /// Like the flying to the horizon and touching the sun with your mind
+  /// Like a the sky and earth swallowing you whole
   static const PathBuilder splitHorizontalIn =
       PathBuilderSplitHorizontal(invert: true);
 
-  /// Like a the sky and earth swallowing you whole
+  /// Like the flying to the horizon and touching the sun with your mind
   static const PathBuilder splitHorizontalOut =
       PathBuilderSplitHorizontal(invert: false);
 
-  /// Like running into a sewage pipe... ooh, sewage!
+  /// Like running backwards out of a sewage pipe... ooh, fresh air!
   static const PathBuilder circleIn = PathBuilderCircle(invert: true);
 
-  /// Like running backwards out of a sewage pipe... ooh, fresh air!
+  /// Like running into a sewage pipe... ooh, sewage!
   static const PathBuilder circleOut = PathBuilderCircle(invert: false);
 }
