@@ -3,6 +3,7 @@
 // TODO - More circle fun - https://motionarray.com/after-effects-templates/10-circle-transitions-32553
 // TODO - Water
 // TODO - Can / Should we add a `center` property to the builders? - https://pub.dev/packages/circular_clip_route
+// TODO - Review the `PhysicalShape` widget, can we swap for ClipRect to add elevation / shadows?
 
 import 'path_builders/circle/circle.dart';
 import 'path_builders/slide/slide_down.dart';
@@ -47,15 +48,15 @@ class PathBuilders {
 
   /// Like the flying to the horizon and touching the sun with your mind
   static const PathBuilder splitHorizontalIn =
-      PathBuilderSplitHorizontal(invert: false);
+      PathBuilderSplitHorizontal(invert: true);
 
   /// Like a the sky and earth swallowing you whole
   static const PathBuilder splitHorizontalOut =
-      PathBuilderSplitHorizontal(invert: true);
+      PathBuilderSplitHorizontal(invert: false);
 
   /// Like running into a sewage pipe... ooh, sewage!
-  static const PathBuilder circleIn = PathBuilderCircle(invert: false);
+  static const PathBuilder circleIn = PathBuilderCircle(invert: true);
 
   /// Like running backwards out of a sewage pipe... ooh, fresh air!
-  static const PathBuilder circleOut = PathBuilderCircle(invert: true);
+  static const PathBuilder circleOut = PathBuilderCircle(invert: false);
 }

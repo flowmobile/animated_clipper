@@ -1,3 +1,11 @@
+## [0.1.2] - 2020-07-05
+
+Updated `circleIn` and `circleOut`
+
+## [0.1.1] - 2020-07-05
+
+Updated `splitHorizontalIn` and `splitHorizontalOut`
+
 ## [0.1.0] - 2020-07-05
 
 Better documentation, example gif
