@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 
 import '../animated_clipper.dart';
-import 'animated_cross_clip.dart';
 
 /// Toggles between two widgets with an animated clip path
 ///
@@ -11,6 +10,10 @@ import 'animated_cross_clip.dart';
 /// of the ClipSwitch changes, the widget calls the [onChanged] callback. Most
 /// widgets that use a ClipSwitch will listen for the [onChanged] callback and
 /// rebuild the ClipSwitch with a new [value] to toggle between widgets.
+///
+/// See also:
+///
+///  * [ClipPathTransition], which drives the [ClipSwitch]
 class ClipSwitch extends StatelessWidget {
   const ClipSwitch({
     Key key,

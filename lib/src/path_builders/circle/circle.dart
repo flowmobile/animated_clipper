@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/widgets.dart';
 
-import '../path_builder.dart';
+import '../../../animated_clipper.dart';
 
 class PathBuilderCircle extends PathBuilder {
   /// Abstract const constructor to enable subclasses to provide

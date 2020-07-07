@@ -1,9 +1,6 @@
 import 'package:flutter/widgets.dart';
 
 import '../animated_clipper.dart';
-import 'path_builders/path_builder.dart';
-
-AnimatedCrossFade t;
 
 /// Specifies which of two children to show. See [AnimatedCrossClip].
 enum CrossClipState {
@@ -27,7 +24,7 @@ enum CrossClipState {
 ///
 /// See also:
 ///
-///  * [AnimatedClipReveal], which animated between children.
+///  * [AnimatedClipReveal], which animates between children.
 ///  * [ClipPathTransition], which [AnimatedCrossClip] uses to perform the
 ///    clip animation.
 class AnimatedCrossClip extends StatefulWidget {

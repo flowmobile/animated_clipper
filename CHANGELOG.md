@@ -1,8 +1,33 @@
 ## [0.0.1] - 2020-07-05
 
-Intitial prototype to define and refine the Models and API interfaces
+Intitial commit to define the Widgets and interfaces.
 
-* Clipper Toggle
-* Animated Path
-   * Slide (Up, Down, Left, Right)
-   * Split (Vertical In / Out, Horizontal In / Out)
+From highest to lowest level of abstraction:
+
+* Stateful widgets with a built-in `AnimationController`
+   * `AnimatedCrossClip`
+   * `AnimatedClipReveal`
+   * `ClipSwitch` (abstracts to `AnimatedCrossClip`)
+* Stateless widgets, bring your own `AnimationController`
+   * `ClipPathTransition`
+* Abstract Classes
+   * `PathBuilder`
+      * Returns a `Path` for a given value, where:
+         * `0` is completely hidden
+         * intermediate values are partially visible
+         * `1` is completely visible
+   * `PathBuilderClipper`
+      * To allow a `PathBuilder` to be used as a CustomClipper
+
+Plus, a collection of `PathBuilder` objects:
+
+* `PathBuilders.slideUp`
+* `PathBuilders.slideDown`
+* `PathBuilders.slideLeft`
+* `PathBuilders.slideRight`
+* `PathBuilders.splitVerticalIn`
+* `PathBuilders.splitVerticalOut`
+* `PathBuilders.splitHorizontalIn`
+* `PathBuilders.splitHorizontalOut`
+* `PathBuilders.circleIn`
+* `PathBuilders.circleOut`

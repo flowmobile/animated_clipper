@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../path_builder.dart';
+import '../../../animated_clipper.dart';
 
 class PathBuilderSlideDown extends PathBuilder {
   /// Abstract const constructor to enable subclasses to provide

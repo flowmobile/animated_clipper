@@ -1,8 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import 'path_builders/path_builder.dart';
-import 'path_builders/path_builder_clipper.dart';
-import 'path_builders/path_builders.dart';
+import '../animated_clipper.dart';
 
 /// Wraps a widget with [ClipPath] and Animates [clipper] with a [PathBuilder].
 class ClipPathTransition extends AnimatedWidget {

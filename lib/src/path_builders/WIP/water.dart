@@ -3,8 +3,8 @@ import 'package:flutter/widgets.dart';
 
 import '../path_builder.dart';
 
-// See
-//  Potion Explosion (Game) - the fluid is is just right for copying
+// To review
+//  Potion Explosion (Game) - the fluid is is *just right*
 //  https://www.programmersought.com/article/211595756/
 //  https://medium.com/agileops/flutter-wave-clipper-animation-dc2017ddfcf3
 

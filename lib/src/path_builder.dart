@@ -1,14 +1,27 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+/// [PathBuilder] is an abstract class that returns a [Path] for use with a
+/// [CustomClipper]. It can render a range of "visibility":
+///
+///   * When [value] is `0` the clipper will render nothing
+///   * When [value] is `1` the clipper will render everything
+///   * Intermediate values should render a partial amount
+///
+/// The [PathBuilder] can be constructed with an [invert] value that will invert
+/// the [Path].
+///
+///
 @immutable
 abstract class PathBuilder {
   /// Abstract const constructor to enable subclasses to provide
   /// const constructors so that they can be used in const expressions.
+  ///
+  /// See [PathBuilders]
   const PathBuilder({
     this.invert = false,
   });
 
+  /// blah
   final bool invert;
 
   Path call(Size size, double value) {
@@ -16,7 +29,7 @@ abstract class PathBuilder {
       return null; // ClipPath Renders nothing
     }
     if (value == 0) {
-      return Path(); // ClipPath Renders everyhing
+      return Path(); // ClipPath Renders everything
     }
     // All the values between
     if (!invert) {

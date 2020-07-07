@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../path_builder.dart';
+import '../../../animated_clipper.dart';
 
 class PathBuilderSplitVertical extends PathBuilder {
   /// Abstract const constructor to enable subclasses to provide

@@ -1,19 +1,24 @@
-// TODO - Documentation
 // TODO - SlideAngle
-// TODO - Split(In|Out)Angle
+// TODO - SplitAngle
 // TODO - More circle fun - https://motionarray.com/after-effects-templates/10-circle-transitions-32553
 // TODO - Water
 // TODO - Can / Should we add a `center` property to the builders? - https://pub.dev/packages/circular_clip_route
 
-import 'circle/circle.dart';
-import 'slide/slide_down.dart';
-import 'slide/slide_left.dart';
-import 'slide/slide_right.dart';
-import 'slide/slide_up.dart';
+import 'path_builders/circle/circle.dart';
+import 'path_builders/slide/slide_down.dart';
+import 'path_builders/slide/slide_left.dart';
+import 'path_builders/slide/slide_right.dart';
+import 'path_builders/slide/slide_up.dart';
 import 'path_builder.dart';
-import 'split/split_horizontal.dart';
-import 'split/split_vertical.dart';
+import 'path_builders/split/split_horizontal.dart';
+import 'path_builders/split/split_vertical.dart';
 
+/// A collection of pathBuilders
+///
+/// See also:
+///
+///  * [PathBuilder], the interface implemented by the constants available from
+///    the [PathBuilders] class.
 class PathBuilders {
   // This class is not meant to be instatiated or extended; this constructor
   // prevents instantiation and extension.

@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 
 import '../animated_clipper.dart';
-import 'path_builders/path_builder.dart';
 
 /// A widget that does a an animated clip path reveal between a new widget and
 /// the widget previously set on the [AnimatedClipReveal] as a child.
