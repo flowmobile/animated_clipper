@@ -85,12 +85,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(width: 12),
                     AnimatedCrossClipExample(
                       value: _bool,
-                      pathBuilder: PathBuilders.slideUp,
+                      pathBuilder: PathBuilders.splitVerticalOut,
                     ),
                     SizedBox(width: 12),
                     AnimatedCrossClipExample(
                       value: _bool,
-                      pathBuilder: PathBuilders.circleOut,
+                      pathBuilder: PathBuilders.circleIn,
                     ),
                   ],
                 ),

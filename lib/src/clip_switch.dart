@@ -3,6 +3,14 @@ import 'package:flutter/widgets.dart';
 import '../animated_clipper.dart';
 import 'animated_cross_clip.dart';
 
+/// Toggles between two widgets with an animated clip path
+///
+/// Used to toggle the on/off state of a single setting.
+///
+/// The ClipSwitch itself does not maintain any state. Instead, when the state
+/// of the ClipSwitch changes, the widget calls the [onChanged] callback. Most
+/// widgets that use a ClipSwitch will listen for the [onChanged] callback and
+/// rebuild the ClipSwitch with a new [value] to toggle between widgets.
 class ClipSwitch extends StatelessWidget {
   const ClipSwitch({
     Key key,
@@ -10,17 +18,21 @@ class ClipSwitch extends StatelessWidget {
     @required this.onChanged,
     @required this.activeWidget,
     @required this.inactiveWidget,
+    this.duration = ClipSwitch.defaultDuration,
+    this.pathBuilder = PathBuilders.slideUp,
+    this.curve = Curves.linear,
+    this.clipBehavior = Clip.antiAlias,
   }) : super(key: key);
 
-  /// Whether this switch is on or off.
+  /// Whether this ClipSwitch is active.
   ///
   /// This property must not be null.
   final bool value;
 
-  /// Called when the user toggles the switch on or off.
+  /// Called when the user taps the ClipSwitch.
   ///
-  /// The switch passes the new value to the callback but does not actually
-  /// change state until the parent widget rebuilds the switch with the new
+  /// The ClipSwitch passes the new value to the callback but does not actually
+  /// change state until the parent widget rebuilds the ClipSwitch with the new
   /// value.
   ///
   /// The callback provided to [onChanged] should update the state of the parent
@@ -40,11 +52,33 @@ class ClipSwitch extends StatelessWidget {
   /// ```
   final ValueChanged<bool> onChanged;
 
-  /// The widget to show when this switch is on.
+  /// The widget to show when this ClipSwitch value is [true].
   final Widget activeWidget;
 
-  /// The widget to show when this switch is off.
+  /// The widget to show when this ClipSwitch value is [false].
   final Widget inactiveWidget;
+
+  /// The duration of the animation.
+  ///
+  /// Defaults to [ClipSwitch.defaultDuration].
+  final Duration duration;
+
+  /// The path builder
+  ///
+  /// Defaults to [PathBuilders.slideUp].
+  final PathBuilder pathBuilder;
+
+  /// The animation curve
+  ///
+  /// Defaults to [Curves.linear].
+  final Curve curve;
+
+  /// {@macro flutter.clipper.clipBehavior}
+  ///
+  /// Defaults to [Clip.antiAlias].
+  final Clip clipBehavior;
+
+  static const Duration defaultDuration = Duration(milliseconds: 300);
 
   @override
   Widget build(BuildContext context) {
@@ -53,15 +87,14 @@ class ClipSwitch extends StatelessWidget {
         onChanged(!value);
       },
       child: AnimatedCrossClip(
-        duration: Duration(milliseconds: 300),
-        pathBuilder: PathBuilders.circleIn,
+        duration: duration,
+        pathBuilder: pathBuilder,
         firstChild: inactiveWidget,
         secondChild: activeWidget,
-        crossClipState: value
-            ? AnimatedCrossClipState.showSecond
-            : AnimatedCrossClipState.showFirst,
-        curve: Curves.easeInOut,
-        clipBehavior: Clip.hardEdge,
+        crossClipState:
+            value ? CrossClipState.showSecond : CrossClipState.showFirst,
+        curve: curve,
+        clipBehavior: clipBehavior,
       ),
     );
   }

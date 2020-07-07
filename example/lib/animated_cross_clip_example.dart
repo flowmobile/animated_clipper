@@ -25,12 +25,11 @@ class AnimatedCrossClipExample extends StatelessWidget {
         text: 'SECOND',
         color: Colors.orange.shade200,
       ),
-      duration: Duration(milliseconds: 300),
       // ...optional
+      crossClipState:
+          value ? CrossClipState.showSecond : CrossClipState.showFirst,
+      duration: Duration(milliseconds: 300),
       pathBuilder: pathBuilder,
-      crossClipState: value
-          ? AnimatedCrossClipState.showSecond
-          : AnimatedCrossClipState.showFirst,
       curve: Curves.easeInOut,
       clipBehavior: Clip.hardEdge,
     );

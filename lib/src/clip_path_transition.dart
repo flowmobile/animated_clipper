@@ -4,14 +4,11 @@ import 'path_builders/path_builder.dart';
 import 'path_builders/path_builder_clipper.dart';
 import 'path_builders/path_builders.dart';
 
-// Based on RotationTransition / SizeTransition etc.
-
-/// Animates the ClipPath of a widget
+/// Wraps a widget with [ClipPath] and Animates [clipper] with a [PathBuilder].
 class ClipPathTransition extends AnimatedWidget {
-  /// Creates a ClipPath transition.
+  /// Creates a [ClipPathTransition].
   ///
-  /// The [animation] argument must not be null.
-  /// The [pathBuilder] argument must not be null.
+  /// All the arguments other than [key] must be non-null.
   const ClipPathTransition({
     Key key,
     @required Animation<double> animation,

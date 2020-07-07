@@ -20,18 +20,19 @@ class AnimatedClipRevealExample extends StatelessWidget {
   ];
 
   static List<PathBuilder> _pathBuilders = [
-    PathBuilders.circleIn,
-    PathBuilders.circleIn,
-    PathBuilders.circleIn,
-    PathBuilders.circleIn,
-    PathBuilders.circleIn,
-    PathBuilders.circleIn,
-    PathBuilders.circleIn,
     PathBuilders.circleOut,
     PathBuilders.circleOut,
     PathBuilders.circleOut,
     PathBuilders.circleOut,
     PathBuilders.circleOut,
+    PathBuilders.circleOut,
+    PathBuilders.circleOut,
+    PathBuilders.circleIn,
+    PathBuilders.circleIn,
+    PathBuilders.circleIn,
+    PathBuilders.circleIn,
+    PathBuilders.circleIn,
+    PathBuilders.circleIn,
     PathBuilders.slideUp,
     PathBuilders.slideUp,
     PathBuilders.slideLeft,
@@ -40,14 +41,14 @@ class AnimatedClipRevealExample extends StatelessWidget {
     PathBuilders.slideDown,
     PathBuilders.slideRight,
     PathBuilders.slideRight,
-    PathBuilders.splitHorizontalIn,
-    PathBuilders.splitHorizontalIn,
     PathBuilders.splitVerticalIn,
     PathBuilders.splitVerticalIn,
-    PathBuilders.splitHorizontalOut,
-    PathBuilders.splitHorizontalOut,
+    PathBuilders.splitHorizontalIn,
+    PathBuilders.splitHorizontalIn,
     PathBuilders.splitVerticalOut,
     PathBuilders.splitVerticalOut,
+    PathBuilders.splitHorizontalOut,
+    PathBuilders.splitHorizontalOut,
   ];
 
   @override
@@ -63,16 +64,16 @@ class AnimatedClipRevealExample extends StatelessWidget {
     // ...we must use a `key` since the Widget type is the same
     return AnimatedClipReveal(
       child: SimpleBox(
-        key: Key('$value'),
+        key: ValueKey<int>(value),
         text: '$value',
         color: randomColor,
       ),
-      duration: randomDuration,
       // ...optional params
+      duration: randomDuration,
       pathBuilder: pathBuilder,
-      revealFirstChild: true,
       clipBehavior: Clip.antiAlias,
       curve: curve,
+      revealFirstChild: true,
     );
   }
 }

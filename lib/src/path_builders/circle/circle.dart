@@ -4,10 +4,14 @@ import 'package:flutter/widgets.dart';
 
 import '../path_builder.dart';
 
-class PathBuilderCircleIn extends PathBuilder {
+class PathBuilderCircle extends PathBuilder {
   /// Abstract const constructor to enable subclasses to provide
   /// const constructors so that they can be used in const expressions.
-  const PathBuilderCircleIn();
+  const PathBuilderCircle({
+    this.invert = false,
+  });
+
+  final bool invert;
 
   @override
   Path buildPath(Size size, double value) {
@@ -18,7 +22,6 @@ class PathBuilderCircleIn extends PathBuilder {
     Offset center = Offset(centreX, centreY);
     double maxRadius = sqrt(w * w + h * h);
     double radius = value * maxRadius;
-    print(value);
     return Path()
       ..addOval(
         Rect.fromCenter(center: center, width: radius, height: radius),

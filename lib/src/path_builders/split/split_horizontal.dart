@@ -2,10 +2,14 @@ import 'package:flutter/widgets.dart';
 
 import '../path_builder.dart';
 
-class PathBuilderSplitVerticalOut extends PathBuilder {
+class PathBuilderSplitHorizontal extends PathBuilder {
   /// Abstract const constructor to enable subclasses to provide
   /// const constructors so that they can be used in const expressions.
-  const PathBuilderSplitVerticalOut();
+  const PathBuilderSplitHorizontal({
+    this.invert = false,
+  });
+
+  final bool invert;
 
   @override
   Path buildPath(Size size, double value) {
