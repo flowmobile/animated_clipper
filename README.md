@@ -7,7 +7,6 @@ A collection of `PathBuilders` are bundled for rendering.
 Demo | PathBuilder
 ------------ | -------------
 ![PathBuilders.slideUp](gifs/slideUp.gif) | PathBuilders.slideUp
-![PathBuilders.slideUp](gifs/slideUp.gif) | PathBuilders.slideUp
 ![PathBuilders.slideDown](gifs/slideDown.gif) | PathBuilders.slideDown
 ![PathBuilders.slideLeft](gifs/slideLeft.gif) | PathBuilders.slideLeft
 ![PathBuilders.slideRight](gifs/slideRight.gif) | PathBuilders.slideRight
