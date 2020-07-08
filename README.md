@@ -5,4 +5,5 @@
 A collection of `PathBuilders` are bundled for rendering.
 
 ![demo](example/example.gif)
+
 ![demo](example/beast.gif)
