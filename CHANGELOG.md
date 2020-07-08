@@ -1,10 +1,10 @@
+## [0.1.6+1] - 2020-07-05
+
+Improve the package description
+
 ## [0.1.6] - 2020-07-05
 
-Readme
-
-First Header | Second Header
------------- | -------------
-Content from cell 1 | Content from cell 2
+Update the readme
 
 ## [0.1.5] - 2020-07-05
 

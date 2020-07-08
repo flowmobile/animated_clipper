@@ -26,6 +26,8 @@ The BEAST app uses `animated_clipper` for its "todo" screen
 
 ### PathBuilders
 
+There are a number of `PathBuilder` classes inclded. Or you can roll your own.
+
 Demo | PathBuilder
 ------------ | -------------
 ![PathBuilders.slideUp](gifs/slideUp.gif) | PathBuilders.slideUp
