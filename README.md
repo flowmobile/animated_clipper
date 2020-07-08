@@ -1,8 +1,30 @@
 # animated_clipper
 
-`ClipSwitch`, `AnimatedClipReveal` and `AnimatedCrossClip` use `ClipPathTransition` for hiding and showing widgets.
+Clip your widgets with Animated Clippers.
 
-A collection of `PathBuilders` are bundled for rendering.
+Reveal widgets with `AnimatedClipReveal`.
+
+Animate between two widgets with `AnimatedCrossClip`.
+
+Interactively switch between two widgets with `ClipSwitch`.
+
+Use `ClipPathTransition` if you want to use an `AnimationController`.
+
+A collection of `PathBuilders` are bundled for rendering (see below)
+
+### Example
+
+The example project demonstrates the main widgets
+
+![demo](gifs/example.gif)
+
+### Live Demo
+
+The BEAST app uses `animated_clipper` for its "todo" screen
+
+![demo](gifs/beast.gif)
+
+### PathBuilders
 
 Demo | PathBuilder
 ------------ | -------------
@@ -16,7 +38,3 @@ Demo | PathBuilder
 ![PathBuilders.splitHorizontalOut](gifs/splitHorizontalOut.gif) | PathBuilders.splitHorizontalOut
 ![PathBuilders.circleIn](gifs/circleIn.gif) | PathBuilders.circleIn
 ![PathBuilders.circleOut](gifs/circleOut.gif) | PathBuilders.circleOut
-
-![demo](gifs/example.gif)
-
-![demo](gifs/beast.gif)
