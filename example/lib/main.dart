@@ -107,6 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   tooltip: 'Increment',
                   child: Icon(Icons.add),
                 ),
+                SizedBox(height: 12),
                 // ClipPathTransition
                 Text('ClipPathTransition animates the ClipPath'),
                 Text('Use an AnimationController to drive the animation'),

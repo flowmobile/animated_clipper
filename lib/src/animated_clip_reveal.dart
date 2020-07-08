@@ -44,6 +44,7 @@ class AnimatedClipReveal extends StatefulWidget {
     this.pathBuilder = PathBuilders.slideUp,
     this.curve = Curves.linear,
     this.clipBehavior = Clip.antiAlias,
+    this.fit = StackFit.loose,
     this.revealFirstChild = false,
   }) : super(key: key);
 
@@ -90,6 +91,11 @@ class AnimatedClipReveal extends StatefulWidget {
   ///
   /// Defaults to [Clip.antiAlias].
   final Clip clipBehavior;
+
+  /// How to size the non-positioned [child] in the stack.
+  ///
+  /// Defaults to [StackFit.loose]
+  final StackFit fit;
 
   /// Whether to animate the initial child widget.
   ///
@@ -178,7 +184,7 @@ class _AnimatedClipRevealState extends State<AnimatedClipReveal>
   @override
   Widget build(BuildContext context) {
     return Stack(
-      fit: StackFit.expand,
+      fit: widget.fit,
       children: children,
     );
   }

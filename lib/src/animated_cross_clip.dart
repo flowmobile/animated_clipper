@@ -40,6 +40,7 @@ class AnimatedCrossClip extends StatefulWidget {
     this.pathBuilder = PathBuilders.slideUp,
     this.curve = Curves.linear,
     this.clipBehavior = Clip.antiAlias,
+    this.fit = StackFit.loose,
   }) : super(key: key);
 
   /// The child that is visible when [crossClipState] is
@@ -71,6 +72,11 @@ class AnimatedCrossClip extends StatefulWidget {
   ///
   /// Defaults to [Clip.antiAlias].
   final Clip clipBehavior;
+
+  /// How to size the non-positioned [firstChild] and [secondChild].
+  ///
+  /// Defaults to [StackFit.loose]
+  final StackFit fit;
 
   /// The child that will be shown when the animation has completed.
   final CrossClipState crossClipState;
@@ -120,7 +126,7 @@ class _AnimatedCrossClipState extends State<AnimatedCrossClip>
   @override
   Widget build(BuildContext context) {
     return Stack(
-      fit: StackFit.expand,
+      fit: widget.fit,
       children: <Widget>[
         widget.firstChild,
         ClipPathTransition(

@@ -2,7 +2,6 @@ import 'package:animated_clipper/animated_clipper.dart';
 import 'package:flutter/material.dart';
 
 import 'animation_playhead.dart';
-import 'simple_box.dart';
 
 class ClipPathTransitionExample extends StatefulWidget {
   const ClipPathTransitionExample({
@@ -23,7 +22,7 @@ class _ClipPathTransitionExampleState extends State<ClipPathTransitionExample>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: Duration(milliseconds: 500),
     );
     _controller.forward();
   }
@@ -100,17 +99,21 @@ class _ClipPathTransitionExampleState extends State<ClipPathTransitionExample>
           },
           items: _allPathBuilders,
         ),
+        SizedBox(height: 12),
         ClipPathTransition(
           animation: _controller.drive(CurveTween(curve: Curves.easeInOut)),
           pathBuilder: _pathBuilder,
           child: Container(
-            color: Colors.blueGrey.shade100,
+            decoration: BoxDecoration(
+              border: Border.all(color: Theme.of(context).primaryColor),
+              color: Colors.grey.shade200,
+            ),
             child: FlutterLogo(
               size: 200,
             ),
           ),
-          // clipBehavior: Clip.antiAlias,
         ),
+        SizedBox(height: 12),
         AnimationPlayhead(
           controller: _controller,
         ),

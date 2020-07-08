@@ -25,6 +25,7 @@ class ClipSwitch extends StatelessWidget {
     this.pathBuilder = PathBuilders.slideUp,
     this.curve = Curves.linear,
     this.clipBehavior = Clip.antiAlias,
+    this.fit = StackFit.loose,
   }) : super(key: key);
 
   /// Whether this ClipSwitch is active.
@@ -81,6 +82,11 @@ class ClipSwitch extends StatelessWidget {
   /// Defaults to [Clip.antiAlias].
   final Clip clipBehavior;
 
+  /// How to size the non-positioned [activeWidget] and [inactiveWidget].
+  ///
+  /// Defaults to [StackFit.loose]
+  final StackFit fit;
+
   static const Duration defaultDuration = Duration(milliseconds: 300);
 
   @override
@@ -98,6 +104,7 @@ class ClipSwitch extends StatelessWidget {
             value ? CrossClipState.showSecond : CrossClipState.showFirst,
         curve: curve,
         clipBehavior: clipBehavior,
+        fit: fit,
       ),
     );
   }
