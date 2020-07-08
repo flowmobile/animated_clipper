@@ -1,3 +1,7 @@
+## [0.1.4] - 2020-07-05
+
+Use `StackFit.expand` for the `Stack` widgets
+
 ## [0.1.3] - 2020-07-05
 
 Humorous docs for `circleIn`, `circleOut`, `splitHorizontalIn` and `splitHorizontalOut`

@@ -120,6 +120,7 @@ class _AnimatedCrossClipState extends State<AnimatedCrossClip>
   @override
   Widget build(BuildContext context) {
     return Stack(
+      fit: StackFit.expand,
       children: <Widget>[
         widget.firstChild,
         ClipPathTransition(

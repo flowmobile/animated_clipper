@@ -178,6 +178,7 @@ class _AnimatedClipRevealState extends State<AnimatedClipReveal>
   @override
   Widget build(BuildContext context) {
     return Stack(
+      fit: StackFit.expand,
       children: children,
     );
   }

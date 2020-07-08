@@ -1,6 +1,6 @@
 name: animated_clipper
 description: ClipSwitch, AnimatedClipReveal and AnimatedCrossClip use ClipPathTransition for hiding and showing widgets. A collection of PathBuilders for rendering. 
-version: 0.1.3
+version: 0.1.4
 homepage: https://github.com/oodavid/animated_clipper
 
 environment:
