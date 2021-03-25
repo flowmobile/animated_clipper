@@ -16,11 +16,11 @@ import '../animated_clipper.dart';
 ///  * [ClipPathTransition], which drives the [ClipSwitch]
 class ClipSwitch extends StatelessWidget {
   const ClipSwitch({
-    Key key,
-    @required this.value,
-    @required this.onChanged,
-    @required this.activeWidget,
-    @required this.inactiveWidget,
+    Key? key,
+    required this.value,
+    required this.onChanged,
+    required this.activeWidget,
+    required this.inactiveWidget,
     this.duration = ClipSwitch.defaultDuration,
     this.pathBuilder = PathBuilders.slideUp,
     this.curve = Curves.linear,

@@ -38,8 +38,8 @@ class AnimatedClipReveal extends StatefulWidget {
   ///
   /// All the arguments other than [key] must be non-null.
   const AnimatedClipReveal({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.duration = AnimatedClipReveal.defaultDuration,
     this.pathBuilder = PathBuilders.slideUp,
     this.curve = Curves.linear,

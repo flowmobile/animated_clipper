@@ -1,3 +1,11 @@
+## [0.2.0] - 2021-03-25
+
+Null Safety
+
+## [0.1.6+2] - 2020-07-05
+
+Update the readme (clearer animations for the PathBuilders)
+
 ## [0.1.6+1] - 2020-07-05
 
 Improve the package description

@@ -32,9 +32,9 @@ class AnimatedCrossClip extends StatefulWidget {
   ///
   /// All the arguments other than [key] must be non-null.
   const AnimatedCrossClip({
-    Key key,
-    @required this.firstChild,
-    @required this.secondChild,
+    Key? key,
+    required this.firstChild,
+    required this.secondChild,
     this.crossClipState = CrossClipState.showFirst,
     this.duration = AnimatedCrossClip.defaultDuration,
     this.pathBuilder = PathBuilders.slideUp,
@@ -89,7 +89,7 @@ class AnimatedCrossClip extends StatefulWidget {
 
 class _AnimatedCrossClipState extends State<AnimatedCrossClip>
     with TickerProviderStateMixin {
-  AnimationController _controller;
+  late AnimationController _controller;
 
   @override
   void initState() {

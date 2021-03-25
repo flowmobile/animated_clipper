@@ -25,27 +25,31 @@ abstract class PathBuilder {
   final bool invert;
 
   Path call(Size size, double value) {
+    // Extremities
     if (value == 1) {
-      return null; // ClipPath Renders nothing
+      return _getBoundary(size); // ...everything
     }
     if (value == 0) {
-      return Path(); // ClipPath Renders everything
+      return Path(); // ...nothing
     }
     // All the values between
     if (!invert) {
       return buildPath(size, value);
     } else {
-      // Grow the boundary a little to fix aliasing rounding that may occur
-      Path boundary = Path()
-        ..addRect(Rect.fromLTWH(-2, -2, size.width + 2, size.height + 2));
-      // ...then invert
+      // Subtract the path from the boundary
       return Path.combine(
         PathOperation.reverseDifference,
         buildPath(size, 1 - value),
-        boundary,
+        _getBoundary(size),
       );
     }
   }
 
   Path buildPath(Size size, double value);
+
+  // Returns a boundary with a little padding to fix aliasing rounding
+  Path _getBoundary(Size size) {
+    return Path()
+      ..addRect(Rect.fromLTWH(-2, -2, size.width + 2, size.height + 2));
+  }
 }

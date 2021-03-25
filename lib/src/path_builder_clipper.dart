@@ -8,8 +8,8 @@ class PathBuilderClipper extends CustomClipper<Path> {
   ///
   /// [value] and [pathBuilder] must not be null.
   PathBuilderClipper({
-    @required this.value,
-    @required this.pathBuilder,
+    required this.value,
+    required this.pathBuilder,
   });
 
   /// The value to render, will be between `0` and `1`, where:
