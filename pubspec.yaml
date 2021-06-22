@@ -1,10 +1,12 @@
 name: animated_clipper
 description: Clip your widgets with Animated Clippers. Includes a collection of PathBuilders and helper widgets.
-version: 0.2.0
-homepage: https://github.com/oodavid/animated_clipper
+version: 0.2.0+2
+homepage: https://github.com/flowmobile/animated_clipper
+repository: https://github.com/flowmobile/animated_clipper
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.0.0"
 
 dependencies:
   flutter:

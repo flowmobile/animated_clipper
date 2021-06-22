@@ -9,8 +9,6 @@ import 'package:flutter/widgets.dart';
 ///
 /// The [PathBuilder] can be constructed with an [invert] value that will invert
 /// the [Path].
-///
-///
 @immutable
 abstract class PathBuilder {
   /// Abstract const constructor to enable subclasses to provide
